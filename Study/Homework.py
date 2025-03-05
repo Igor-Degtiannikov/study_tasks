@@ -46,3 +46,28 @@
 #     print(locals())  # {'x': 5} — только локальные переменные внутри функции
 #
 # print(globals())  # Покажет все глобальные переменные в программе
+
+###string methods
+
+## print("Hello, World!!".strip("!")) - удаляет все ! в начале и конце строки.
+# print("Hello, World!!".removesuffix("!")) - удаляет только один !
+
+## replace_map = str.maketrans({ - str.maketrans({...}) создаёт таблицу замены символов.
+#     "!": "",
+#     ",": "",
+# })
+#
+# print("Hello, World!!".translate(replace_map)) -translate(replace_map) применяет эту таблицу к строке, удаляя ! и ,
+
+## text = "Hello world"
+# words = text.split()
+#
+# print(f"{words[0]}\n{words[1]}") - раздел по индексу
+# print("\n".join(text.split())) - заменяет пробелы на перенос строки \n
+# print(text.replace(" ", "\n")) - делает то же самое.
+
+## text = "qwertyuiop"
+# result = ""
+#
+# result = [letter.upper() if letter in "eouai" else letter for letter in text]
+# print("".join(result))
