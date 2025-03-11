@@ -46,3 +46,34 @@
 # amount(num_list)
 # find_max(num_list)
 # multiplication(num_list)
+
+###@classmethod
+# class Dog:
+#     __bark_sound = "B00000RK!"
+#     __count = 0
+#
+#     def __init__(self, name, breed):
+#         self.name = name
+#         self.breed = breed
+#         Dog.__count += 1
+#
+#     @classmethod
+#     def get_total_count(cls):
+#         return cls.__count
+#
+#     @classmethod
+#     def bark(cls):
+#         print(cls.__bark_sound)
+#
+#     @classmethod
+#     def create_from_string(cls, dog_string):
+#         name, breed = dog_string.split(":")
+#         return cls(name, breed)
+#
+#
+# dog_string = "Buddy:Golden Retriever"
+# buddy = Dog.create_from_string(dog_string)
+# print(buddy.name)
+
+
+
