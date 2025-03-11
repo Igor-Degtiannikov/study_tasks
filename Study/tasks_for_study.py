@@ -70,7 +70,11 @@
 #         name, breed = dog_string.split(":")
 #         return cls(name, breed)
 #
-#
+#@staticmethod
+# def calculate_age_in_dog_years(age):
+#     dog_years = age * 7
+#     return dog_years
+
 # dog_string = "Buddy:Golden Retriever"
 # buddy = Dog.create_from_string(dog_string)
 # print(buddy.name)
