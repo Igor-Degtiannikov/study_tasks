@@ -49,35 +49,49 @@
 
 ###@classmethod
 # class Dog:
-#     __bark_sound = "B00000RK!"
-#     __count = 0
+#     _bark_sound = "B00000RK!"
+#     _count = 0
+#     items = list()
 #
 #     def __init__(self, name, breed):
 #         self.name = name
 #         self.breed = breed
-#         Dog.__count += 1
+#         Dog._count += 1
+#         Dog.items.append(self)
+#
+#     def __str__(self):
+#         return f"{self.__class__.__name__}: {self.name, self.breed, Dog._bark_sound, Dog._count}"
 #
 #     @classmethod
 #     def get_total_count(cls):
-#         return cls.__count
+#         return cls._count
 #
 #     @classmethod
-#     def bark(cls):
-#         print(cls.__bark_sound)
+#     def rename_objects(cls):
+#         for item in cls.items:
+#             item.name = item.name.upper()
 #
 #     @classmethod
 #     def create_from_string(cls, dog_string):
 #         name, breed = dog_string.split(":")
 #         return cls(name, breed)
 #
-#@staticmethod
-# def calculate_age_in_dog_years(age):
-#     dog_years = age * 7
-#     return dog_years
+# #     @staticmethod
+# #     def calculate_age_in_dog_years(age):
+# #         dog_years = age * 7
+# #         return dog_years
+# #
+# # dog_string = "Buddy:Golden Retriever"
+# # buddy = Dog.create_from_string(dog_string)
+# # print(buddy.name)
+#
+# d1 = Dog("Alice","Gold Retviler")
+# d2 = Dog("Ali","Silver Retviler")
+#
+# print(d1, d2)
+# Dog.rename_objects()
+# print(d1, d2)
 
-# dog_string = "Buddy:Golden Retriever"
-# buddy = Dog.create_from_string(dog_string)
-# print(buddy.name)
 
 
 

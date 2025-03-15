@@ -71,3 +71,116 @@
 #
 # result = [letter.upper() if letter in "eouai" else letter for letter in text]
 # print("".join(result))
+
+###14.03.25###Tasks class
+
+# class Printer:
+#     _work_sound = "BEEEEEEEP"
+#     _page_count = 0
+#     _print_speed = 5
+#
+#     def __init__(self, print_name, page_count):
+#         self.print_name = print_name
+#         Printer._page_count += page_count
+#
+#         print(f"Document added: {self.print_name}, pages: {page_count}")
+#
+#     @classmethod
+#     def calculate_time_work(cls):
+#         print(cls._work_sound)
+#
+#         total_time = cls._page_count / cls._print_speed
+#         minutes = int(total_time)
+#         seconds = int((total_time - minutes) * 60)
+#
+#         print(f"Estimated printing time: {minutes} min {seconds} sec")
+#         print("FINISH")
+#
+# doc1 = Printer("report", 8)
+# doc2 = Printer("essay", 12)
+# Printer.calculate_time_work()
+
+###Спросить Константина, почему я не вижу вывод
+# class Phone:
+#     def __init__(self, model, battery_level):
+#         self.model = model
+#         self.battery_level = battery_level
+#
+#     def make_call(self):
+#         if self.battery_level == 0:
+#             print("No energy")
+#         else:
+#             print("Start of call")
+#
+#     def charge_phone(self, amount):
+#         if self.battery_level >= 100:
+#             print("The phone is already fully charged.")
+#         else:
+#             self.battery_level = min(100, self.battery_level + amount)
+#             print(f"Charging... New battery level: {self.battery_level}%")
+#
+#     def __str__(self):
+#         return f"Phone model: {self.model}, Battery level: {self.battery_level}%"
+#
+#
+# phone1 = Phone("iPhone 13", 0)
+# phone2 = Phone("Samsung S22", 50)
+#
+# print(phone1)
+# print(phone2)
+#
+# phone1.make_call()
+# phone2.make_call()
+#
+# phone1.charge_phone(30)
+# phone2.charge_phone(60)
+
+# class Scanner:
+#     _scan_sound = "GGGGGGG"
+#     _total_scanned_pages = 0
+#     _scan_speed = 2  # страниц в секунду
+#
+#     def __init__(self, document_name, page_count, color_mode=False):
+#         self.document_name = document_name
+#         self.page_count = page_count
+#         self.color_mode = color_mode  # У каждого объекта свой режим цвета
+#
+#         print(f"Document added: {self.document_name}, pages: {self.page_count}")
+#
+#     @classmethod
+#     def calculate_scan_time(cls):
+#         if cls._total_scanned_pages == 0:
+#             print("No documents scanned yet.")
+#             return
+#
+#         scan_speed = cls._scan_speed
+#         total_scan = cls._total_scanned_pages / scan_speed
+#         minutes = int(total_scan)
+#         seconds = int((total_scan - minutes) * 60)
+#
+#         print(f"Estimated scanning time: {minutes} min {seconds} sec")
+#
+#     def scan_document(self):
+#         print(f"Scanning {self.document_name}...\n{Scanner._scan_sound}")
+#
+#         scan_speed = Scanner._scan_speed
+#         if self.color_mode:
+#             scan_speed /= 2
+#
+#         Scanner._total_scanned_pages += self.page_count
+#         print("Scanning complete.")
+#
+#         Scanner.calculate_scan_time()
+#
+#     @classmethod
+#     def show_total_scanned_pages(cls):
+#         print(f"Total scanned pages: {cls._total_scanned_pages}")
+#
+#
+# doc1 = Scanner("Report", 10, color_mode=True)
+# doc2 = Scanner("Essay", 5)
+#
+# doc1.scan_document()
+# doc2.scan_document()
+#
+# Scanner.show_total_scanned_pages()
