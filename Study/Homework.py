@@ -135,52 +135,52 @@
 # phone1.charge_phone(30)
 # phone2.charge_phone(60)
 
+
 # class Scanner:
-#     _scan_sound = "GGGGGGG"
-#     _total_scanned_pages = 0
-#     _scan_speed = 2  # страниц в секунду
+#     _speed_page = 3
+#     _total_page_count = 0
 #
-#     def __init__(self, document_name, page_count, color_mode=False):
+#     def __init__(self, document_name, page_count):
 #         self.document_name = document_name
-#         self.page_count = page_count
-#         self.color_mode = color_mode  # У каждого объекта свой режим цвета
+#         Scanner._total_page_count += page_count
 #
-#         print(f"Document added: {self.document_name}, pages: {self.page_count}")
-#
-#     @classmethod
-#     def calculate_scan_time(cls):
-#         if cls._total_scanned_pages == 0:
-#             print("No documents scanned yet.")
-#             return
-#
-#         scan_speed = cls._scan_speed
-#         total_scan = cls._total_scanned_pages / scan_speed
-#         minutes = int(total_scan)
-#         seconds = int((total_scan - minutes) * 60)
-#
-#         print(f"Estimated scanning time: {minutes} min {seconds} sec")
-#
-#     def scan_document(self):
-#         print(f"Scanning {self.document_name}...\n{Scanner._scan_sound}")
-#
-#         scan_speed = Scanner._scan_speed
-#         if self.color_mode:
-#             scan_speed /= 2
-#
-#         Scanner._total_scanned_pages += self.page_count
-#         print("Scanning complete.")
-#
-#         Scanner.calculate_scan_time()
+#         print(f"Dokument: {self.document_name} has {Scanner._total_page_count} page")
 #
 #     @classmethod
-#     def show_total_scanned_pages(cls):
-#         print(f"Total scanned pages: {cls._total_scanned_pages}")
+#     def calculate(cls):
+#         print("Scanning a document ")
+#         total_skan = cls._total_page_count / cls._speed_page
+#         minutes = int(total_skan)
+#         seconds = int((total_skan - minutes) * 60)
 #
+#         print(f"Scan completed in {minutes} min {seconds} sec")
 #
-# doc1 = Scanner("Report", 10, color_mode=True)
-# doc2 = Scanner("Essay", 5)
+# scan1 = Scanner("Report", 9)
+# scan2 = Scanner("Contract", 6)
 #
-# doc1.scan_document()
-# doc2.scan_document()
+# Scanner.calculate()
+
+# class Fax(Printer, Scanner):
 #
-# Scanner.show_total_scanned_pages()
+#     def __init__(self):
+#         self.printer = Printer()
+#         self.scanner = Scanner()
+#
+#     def fax_print(self, document_name, page_count):
+#         print(f"Printing '{document_name}' ({page_count} pages)...")
+#         self.printer = Printer(document_name, page_count)
+#         print("Document printed successfully!")
+#
+#     def send_fax(self,document_name, recipient_number):
+#         print(f"Sending '{document_name}' to {recipient_number}...")
+#         print("Fax sent successfully!")
+#
+#     def fax_scan(self, document_name, page_count):
+#         print(f"Scanning '{document_name}' ({page_count} pages)...")
+#         self.scanner = Scanner(document_name, page_count)
+#         print("Scan completed!")
+#
+# fax = Fax()
+# fax.fax_print("Report", 5)
+# fax.fax_scan("Contract", 10)
+# fax.send_fax("Invoice", "+123456789")
