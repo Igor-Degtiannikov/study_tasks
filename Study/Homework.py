@@ -184,3 +184,32 @@
 # fax.fax_print("Report", 5)
 # fax.fax_scan("Contract", 10)
 # fax.send_fax("Invoice", "+123456789")
+
+###Patern Singlton
+
+# class Config:
+#     _instance = None
+#
+#     def __new__(cls, theme="Dark"):
+#         if cls._instance is None:
+#             cls._instance = super().__new__(cls)
+#             cls.theme = theme
+#         return cls._instance
+#
+#     def set_theme(self, theme):
+#         if theme in ("dark", "light"):
+#             self.theme = theme
+#         else:
+#             raise ValueError("Тема может быть только 'dark' или 'light'")
+#
+#
+# config1 = Config()
+# print(config1.theme)
+#
+# config1.set_theme("dark")
+# print(config1.theme)  # dark
+#
+# config2 = Config()
+# print(config2.theme)
+#
+# print(config1 is config2)
